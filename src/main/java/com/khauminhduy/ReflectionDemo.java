@@ -9,9 +9,9 @@ public class ReflectionDemo {
 		Field fieldName = null;
 		Field declaredFieldAge = null;
 		try {
-			fieldName = classPerson.getField("name"); // for public field
+			fieldName = classPerson.getField("name"); // for public field and field inherited
 			
-			declaredFieldAge = classPerson.getDeclaredField("age"); // for private field 
+			declaredFieldAge = classPerson.getDeclaredField("age"); // for private field > public and no inherited 
 		} catch (NoSuchFieldException e) {
 			e.printStackTrace();
 		} catch (SecurityException e) {
@@ -23,6 +23,7 @@ public class ReflectionDemo {
 		
 		String name2 = declaredFieldAge.getName();
 		System.out.println(name2);
+		
 		
 	}
 
